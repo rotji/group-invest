@@ -1,0 +1,33 @@
+/* src/pages/HomePage.module.css */
+
+.homePageContainer {
+ padding: 20px;
+ background-color: #f9f9f9;
+ max-width: 800px;
+ /* Constrain the width to make the text spread over more lines */
+ margin: 0 auto;
+ /* Center the container */
+ text-align: center;
+ /* Center the content */
+}
+
+.title {
+ color: #333;
+ font-size: 28px;
+ margin-bottom: 15px;
+}
+
+.description {
+ color: #555;
+ font-size: 18px;
+ line-height: 2;
+ /* Increase line height to spread out the text */
+ margin-bottom: 20px;
+ max-width: 700px;
+ word-wrap: break-word;
+ /* Ensure long words break into the next line */
+}
+
+strong {
+ color: #000;
+}

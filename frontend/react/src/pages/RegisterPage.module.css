@@ -1,0 +1,45 @@
+/* src/pages/RegisterPage.module.css */
+
+.registerContainer {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ padding: 20px;
+ background-color: #f0f0f0;
+ height: 100vh;
+}
+
+.title {
+ font-size: 24px;
+ margin-bottom: 20px;
+ color: #333;
+}
+
+.form {
+ display: flex;
+ flex-direction: column;
+ gap: 15px;
+ width: 300px;
+}
+
+.inputField {
+ padding: 10px;
+ font-size: 16px;
+ border: 1px solid #ccc;
+ border-radius: 5px;
+}
+
+.submitButton {
+ padding: 10px;
+ background-color: #4caf50;
+ color: white;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ font-size: 16px;
+}
+
+.submitButton:hover {
+ background-color: #45a049;
+}
