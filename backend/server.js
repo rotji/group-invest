@@ -1,8 +1,8 @@
-// backend/server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const authRoutes = require('./routes/auth'); // Import the auth routes
+const authRoutes = require('./routes/auth'); // Import auth routes
+const groupRoutes = require('./routes/groups'); // Import group routes
 
 dotenv.config();  // Loads environment variables from .env file
 
@@ -19,8 +19,9 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
 
 // Use Routes
 app.use('/api/auth', authRoutes); // Use the auth routes for /api/auth path
+app.use('/api/groups', groupRoutes); // Use the group routes for /api/groups path
 
-// Example route (we can replace this with more specific ones)
+// Example route
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
