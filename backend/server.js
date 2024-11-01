@@ -4,7 +4,9 @@ const dotenv = require('dotenv');
 const authRoutes = require('./routes/auth'); // Import auth routes
 const groupRoutes = require('./routes/groups'); // Import group routes
 
-dotenv.config();  // Loads environment variables from .env file
+dotenv.config();
+console.log('Database URL:', process.env.DATABASE_URL);  // Check if the variable is loaded
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -13,9 +15,10 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 // MongoDB connection setup
-mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Connected to MongoDB'))
+mongoose.connect(process.env.DATABASE_URL)
+  .then(() => console.log(`Connected to MongoDB at ${process.env.DATABASE_URL}`))
   .catch((err) => console.error('MongoDB connection error:', err));
+
 
 // Use Routes
 app.use('/api/auth', authRoutes); // Use the auth routes for /api/auth path
