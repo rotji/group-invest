@@ -14,6 +14,9 @@ const PORT = process.env.PORT || 5000;
 // Middleware to parse JSON requests
 app.use(express.json());
 
+// Enable CORS
+app.use(cors()); // Add this line here
+
 // MongoDB connection setup
 mongoose.connect(process.env.DATABASE_URL)
   .then(() => console.log(`Connected to MongoDB at ${process.env.DATABASE_URL}`))
