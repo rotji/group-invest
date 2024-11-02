@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import styles from './RegisterPage.module.css';
 
+const API_URL = "http://localhost:5000"; // Use environment variable for production/deployment
+
 function RegisterPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
