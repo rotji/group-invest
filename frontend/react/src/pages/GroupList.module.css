@@ -1,35 +1,77 @@
-/* src/pages/GroupList.module.css */
-
 .groupListContainer {
+ max-width: 600px;
+ margin: auto;
  padding: 20px;
- background-color: #f7f7f7;
+ background-color: #f8f9fa;
  border-radius: 8px;
- max-width: 400px;
- margin: 0 auto;
- text-align: center;
 }
 
 .title {
- font-size: 24px;
+ text-align: center;
  margin-bottom: 20px;
- color: #2c3e50;
-}
-
-.groupList {
- list-style-type: none;
- padding: 0;
+ font-size: 24px;
 }
 
 .groupItem {
- padding: 10px;
- margin: 8px 0;
- background-color: #e3e3e3;
- border-radius: 5px;
- font-size: 18px;
- transition: background-color 0.3s ease;
+ padding: 15px;
+ border-bottom: 1px solid #ccc;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
 }
 
-.groupItem:hover {
- background-color: #d1d1d1;
+.public {
+ color: green;
+ margin-left: 10px;
+}
+
+.private {
+ color: red;
+ margin-left: 10px;
+}
+
+.createGroupForm {
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ margin-top: 30px;
+}
+
+input,
+select {
+ padding: 8px;
+ border-radius: 5px;
+ border: 1px solid #ddd;
+}
+
+.createButton {
+ background-color: green;
+ color: white;
+ padding: 10px;
+ border: none;
+ border-radius: 5px;
  cursor: pointer;
+}
+
+.createButton:hover {
+ background-color: darkgreen;
+}
+
+.joinButton {
+ background-color: blue;
+ color: white;
+ padding: 5px 10px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ margin-right: 10px;
+}
+
+.joinButton:hover {
+ background-color: darkblue;
+}
+
+.membersCount {
+ font-weight: bold;
+ margin-left: 10px;
 }

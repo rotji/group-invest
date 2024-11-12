@@ -43,3 +43,13 @@
 .submitButton:hover {
  background-color: #45a049;
 }
+
+.message {
+ color: green;
+ font-size: 1rem;
+ margin-top: 10px;
+}
+
+.message.error {
+ color: red;
+}

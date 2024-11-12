@@ -2,12 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
-const authRoutes = require('./routes/auth'); // Import auth routes
-const groupRoutes = require('./routes/groups'); // Import group routes
+const authRoutes = require('./routes/auth');
+const groupRoutes = require('./routes/groups');
 
 dotenv.config();
-console.log('Database URL:', process.env.DATABASE_URL);  // Check if the variable is loaded
 
+// Log database URL for debugging
+console.log('Database URL:', process.env.DATABASE_URL);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -15,22 +16,33 @@ const PORT = process.env.PORT || 5000;
 // Middleware to parse JSON requests
 app.use(express.json());
 
-// Enable CORS
-app.use(cors()); // Add this line here
+// Enable CORS for cross-origin requests
+app.use(cors());
 
-// MongoDB connection setup
-mongoose.connect(process.env.DATABASE_URL)
+// MongoDB connection setup with options
+mongoose.connect(process.env.DATABASE_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
   .then(() => console.log(`Connected to MongoDB at ${process.env.DATABASE_URL}`))
-  .catch((err) => console.error('MongoDB connection error:', err));
-
+  .catch((err) => {
+    console.error('MongoDB connection error:', err);
+    process.exit(1); // Exit process with failure
+  });
 
 // Use Routes
-app.use('/api/auth', authRoutes); // Use the auth routes for /api/auth path
-app.use('/api/groups', groupRoutes); // Use the group routes for /api/groups path
+app.use('/api/auth', authRoutes);
+app.use('/api/groups', groupRoutes);
 
-// Example route
+// Example route for testing
 app.get('/', (req, res) => {
   res.send('API is running...');
+});
+
+// Global error handler (optional)
+app.use((err, req, res, next) => {
+  console.error('Global error handler:', err);
+  res.status(500).json({ error: 'Something went wrong!' });
 });
 
 // Start the server

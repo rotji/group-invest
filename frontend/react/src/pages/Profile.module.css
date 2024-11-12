@@ -1,0 +1,81 @@
+.profileContainer {
+ max-width: 600px;
+ margin: 20px auto;
+ padding: 20px;
+ background-color: #f5f5f5;
+ border-radius: 10px;
+ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.userInfo {
+ text-align: center;
+ margin-bottom: 20px;
+}
+
+.profileImage {
+ width: 150px;
+ height: 150px;
+ border-radius: 50%;
+ object-fit: cover;
+ margin-bottom: 15px;
+}
+
+.userName {
+ font-size: 24px;
+ font-weight: bold;
+ color: #333;
+}
+
+.userEmail,
+.userPhone {
+ font-size: 16px;
+ color: #666;
+ margin-bottom: 5px;
+}
+
+.statsContainer {
+ display: flex;
+ gap: 20px;
+ margin-bottom: 20px;
+}
+
+.statBox {
+ flex: 1;
+ background-color: #fff;
+ padding: 15px;
+ border-radius: 8px;
+ text-align: center;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.statBox h3 {
+ margin-bottom: 10px;
+ color: #007bff;
+}
+
+.statBox p {
+ font-size: 18px;
+ font-weight: bold;
+}
+
+.groupsContainer {
+ margin-top: 20px;
+}
+
+.groupsContainer h3 {
+ font-size: 20px;
+ margin-bottom: 10px;
+}
+
+.groupList {
+ list-style: none;
+ padding: 0;
+}
+
+.groupItem {
+ background-color: #007bff;
+ color: #fff;
+ padding: 8px;
+ border-radius: 5px;
+ margin-bottom: 5px;
+}

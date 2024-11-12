@@ -43,3 +43,15 @@
 .submitButton:hover {
  background-color: #45a049;
 }
+
+.message {
+ color: green;
+ /* Default success message color */
+ font-size: 1rem;
+ margin-top: 10px;
+}
+
+.message.error {
+ color: red;
+ /* Add this class for error messages */
+}

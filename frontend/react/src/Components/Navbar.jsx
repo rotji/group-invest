@@ -10,6 +10,7 @@ function NavBar() {
         <li className={styles.navItem}><Link to="/">Home</Link></li>
         <li className={styles.navItem}><Link to="/login">Login</Link></li>
         <li className={styles.navItem}><Link to="/register">Register</Link></li>
+        <li className={styles.navItem}><Link to="/profile">Profile</Link></li>
         <li className={styles.navItem}><Link to="/groups">Groups</Link></li>
         <li className={styles.navItem}><Link to="/dashboard">Dashboard</Link></li>
       </ul>
